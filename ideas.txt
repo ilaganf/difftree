@@ -1,0 +1,21 @@
+ideas.txt
+
+Random walk approach
+---------------------
+monte carlo tree idea
+- set pre-defined path length L and number of curves C
+- start from random point near the top of the graph
+- use distances as transition probabilities to jump
+  to another node, with the constraint of never moving up
+  (if no transition possible, stay where you are)
+- stop after L points
+- record coordinates of each point visited in order
+- flatten (x,y,z) into vector 
+- repeat k times, saving each vector
+- place all path histories into matrix, perform 
+  SVD(?) to get C "representative" vectors
+- Convert representative vectors back into coordinates
+  and fit smooth curve to each on original graph
+- Tie it up at the top (maybe enforce common end point)
+
+gradient field idea
